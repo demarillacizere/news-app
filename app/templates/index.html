@@ -3,26 +3,28 @@
 
 <!-- Content block -->
 {% block content %}
-<!-- General news -->
-<h3> General news</h3>
-<ul>
-    {{ macro.displayArticleList(general)}}
-</ul>
-<!-- Science movie -->
-<h3> Science news</h3>
-<ul>
-    {{ macro.displayArticleList(science)}}
-</ul>
-<!-- Technology news  -->
-<h3> Technology news </h3>
-<ul>
-    {{ macro.displayArticleList(technology)}}
-</ul>
-<!-- Now showing movie -->
-<h3>Entertainment news</h3>
-<ul>
-    {{ macro.displayArticleList(entertainment)}}
-</ul>
+<div class="container">
+    <!-- General news -->
+    <h3> General news</h3>
+    <div class='row container'>
+        {{ macro.displayArticleList(general)}}
+    </div>
+    <!-- Science movie -->
+    <h3> Science news</h3>
+    <div class='row'>
+        {{ macro.displayArticleList(science)}}
+    </div>
+    <!-- Technology news  -->
+    <h3> Technology news </h3>
+    <div class='row'>
+        {{ macro.displayArticleList(technology)}}
+    </div>
+    <!-- Now showing movie -->
+    <h3>Entertainment news</h3>
+    <div class='row' >
+        {{ macro.displayArticleList(entertainment)}}
+    </div>
 
+</div>
 
 {% endblock%}

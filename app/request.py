@@ -37,17 +37,14 @@ def process_results(article_list):
     '''
     article_results = []
     for article_item in article_list:
-        source = article_item.get('source[name]')
-        author = article_item.get('author')
         title = article_item.get('title')
         description = article_item.get('description')
-        urlToImage = article_item.get('urlToimage')
-        content = article_item.get('content')
         url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
         publishedAt= article_item.get('publishedAt')
 
-        
-        article_object = Article(source,author,title,description,urlToImage,url,content,publishedAt)
-        article_results.append(article_object)
+        if urlToImage and description:
+            article_object = Article(title,description,url,urlToImage,publishedAt)
+            article_results.append(article_object)
 
     return article_results
