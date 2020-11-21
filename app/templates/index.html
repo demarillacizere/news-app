@@ -3,21 +3,25 @@
 
 <!-- Content block -->
 {% block content %}
-
-<!-- Popular movie -->
+<!-- General news -->
+<h3> General news</h3>
+<ul>
+    {{ macro.displayArticleList(general)}}
+</ul>
+<!-- Science movie -->
 <h3> Science news</h3>
 <ul>
-    {{ macro.displayMovieList(science)}}
+    {{ macro.displayArticleList(science)}}
 </ul>
-<!-- Upcoming movie  -->
-<h3> Entertainment Movies </h3>
+<!-- Technology news  -->
+<h3> Technology news </h3>
 <ul>
-    {{ macro.displayMovieList(entertainment)}}
+    {{ macro.displayArticleList(technology)}}
 </ul>
 <!-- Now showing movie -->
-<h3>General news</h3>
+<h3>Entertainment news</h3>
 <ul>
-    {{ macro.displayMovieList(general)}}
+    {{ macro.displayArticleList(entertainment)}}
 </ul>
 
 

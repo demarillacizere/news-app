@@ -2,7 +2,7 @@ from app import app
 import urllib.request,json
 from .models import Article, Sources
 
-Article = article.Article
+Article = Article
 api_key = app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
 
@@ -18,8 +18,8 @@ def get_articles(category):
 
         articles_results = None
 
-        if get_articles_response['results']:
-            article_results_list = get_articles_response['results']
+        if get_articles_response['articles']:
+            article_results_list = get_articles_response['articles']
             article_results = process_results(article_results_list)
 
 
@@ -37,16 +37,17 @@ def process_results(article_list):
     '''
     article_results = []
     for article_item in article_list:
+        source = article_item.get('source[name]')
         author = article_item.get('author')
-        title = movie_item.get('original_title')
+        title = article_item.get('title')
         description = article_item.get('description')
         urlToImage = article_item.get('urlToimage')
         content = article_item.get('content')
-        url = article_item.get.('url')
+        url = article_item.get('url')
         publishedAt= article_item.get('publishedAt')
 
         
-        article_object = Article(author,title,description,urlToImage,url,content,publishedAt)
+        article_object = Article(source,author,title,description,urlToImage,url,content,publishedAt)
         article_results.append(article_object)
 
-    return movie_results
+    return article_results
