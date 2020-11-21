@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEWS_API_BASE_URL='https://newsapi.org/v2/top-headlines?pageSize=8&country=us&category={}&apiKey={}'
+    NEWS_API_BASE_URL='https://newsapi.org/v2/top-headlines?pageSize=6&country=us&category={}&apiKey={}'
     NEWS_ARTICLE_API="https://newsapi.org/v2/top-headlines?sources={}&apiKey={}"    
 
 
