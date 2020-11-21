@@ -5,6 +5,7 @@ from .models import Article, Sources
 Article = Article
 api_key = app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
+source_url = app.config['NEWS_SOURCE_URL']
 
 def get_articles(category):
     '''
@@ -75,3 +76,31 @@ def process_sources(source_list):
         source_results=source_results[:4]
 
     return source_results
+
+def get_news(name):
+    get_news_url=source_url.format(name,api_key)
+    with urllib.request.urlopen(get_news_url) as url:
+        article_data=url.read()
+        article_response=json.loads(article_data)
+
+        article_object=None;
+
+        if article_response['articles']:
+            at_result_list=article_response["articles"]
+            at_results=process_sources(at_result_list)
+    return at_results
+
+
+def process_news(article_list):
+    article_results=[]
+    for article in article_list:
+        title=article.get("title")
+        description=article.get("description")
+        urlToImage=article.get("urlToImage")
+        url=article.get("url")
+        publishedAt=article.get("publishedAt")
+
+        article_object=Articles(title,description,urlToImage,url,publishedAt)
+        article_results.append(article_object)
+
+    return article_results 
