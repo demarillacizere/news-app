@@ -14,7 +14,7 @@ def get_articles(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_articles_url = base_url.format(category)
+    get_articles_url = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
@@ -54,7 +54,7 @@ def process_results(article_list):
     return article_results
 
 def get_sources(sources):
-    get_source_url=source_url.format(sources)
+    get_source_url=source_url.format(sources,api_key)
     with urllib.request.urlopen(get_source_url) as url:
         source_data=url.read()
         source_response=json.loads(source_data)
@@ -81,7 +81,7 @@ def process_sources(source_list):
     return source_results
 
 def get_news(name):
-    get_news_url=news_url.format(name)
+    get_news_url=news_url.format(name,api_key)
     with urllib.request.urlopen(get_news_url) as url:
         news_data=url.read()
         news_response=json.loads(news_data)
