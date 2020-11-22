@@ -3,21 +3,21 @@
 
 {% block content %}
 <div class="container">
-    <h3> Top Headlines on {{source.name}}</h3>
+    <h3> Top Headlines on {{name}}</h3>
     <div class='row container'>
       {%if name=="al-jazeera-english"%}
-        {{macro.displayArticleList(aljezera_n)}}
+        {{macro.displayNews(aljazeera)}}
       {%endif%}
       {%if name=="abc-news"%}
-        {{macro.displayArticleList(bbc_news)}}
+        {{macro.displayNews(abc_news)}}
       {%endif%}
 
       {%if name=="abc-news-au"%}
-        {{macro.displayArticleList(abc_news)}}
+        {{macro.displayNews(abc_au)}}
       {%endif%}
 
       {%if name=="ars-technica"%}
-        {{macro.displayArticleList(tech)}}
+        {{macro.displayNews(tech)}}
       {%endif%}
 </div>
 
