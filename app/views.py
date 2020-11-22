@@ -15,8 +15,8 @@ def index():
     general_news = get_articles('general')
     technology_news = get_articles('technology')
     title = 'Home - Browse news articles from all around the world'
-
-    return render_template('index.html', title = title, science = science_news, entertainment = entertainment_news, general = general_news, technology = technology_news)
+    source = get_sources("sources")
+    return render_template('index.html', title = title, science = science_news, entertainment = entertainment_news, general = general_news, technology = technology_news, sources=source)
 
 @app.route("/source/<name>")
 def source(name):

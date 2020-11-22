@@ -1,6 +1,6 @@
 from app import app
 import urllib.request,json
-from .models import Article, Sources
+from .models import Article, Source
 
 Article = Article
 api_key = app.config['NEWS_API_KEY']
@@ -71,7 +71,7 @@ def process_sources(source_list):
         description=source.get("description")
         url=source.get("url")
 
-        source_object=Sources(id,name,description,url)
+        source_object=Source(id,name,description,url)
         source_results.append(source_object)
         source_results=source_results[:4]
 
@@ -83,7 +83,7 @@ def get_news(name):
         article_data=url.read()
         article_response=json.loads(article_data)
 
-        article_object=None;
+        article_object=None
 
         if article_response['articles']:
             at_result_list=article_response["articles"]

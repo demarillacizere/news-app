@@ -9,7 +9,7 @@ class Article:
         self.url=url
         self.publishedAt=publishedAt
 
-class Sources:
+class Source:
     def __init__(self,id, name,description,url):
         self.id=id
         self.name=name
