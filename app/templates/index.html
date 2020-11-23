@@ -11,30 +11,29 @@
 {% block content %}
 <div class="container">
     <!-- General news -->
-    <h3> General news</h3>
-    <div class='row container'>
+    <div class='row container' id='general'>
         {{ macro.displayArticleList(general)}}
     </div><br><br>
-    <!-- Science movie -->
-    <h3> Science news</h3>
+    <!-- Science news -->
+    <h2 id="science"> Science </h2><br>
     <div class='row'>
         {{ macro.displayArticleList(science)}}
     </div>
     <!-- Technology news  -->
-    <h3> Technology news </h3>
+    <h2 id="technology"> Technology</h2><br>
     <div class='row'>
         {{ macro.displayArticleList(technology)}}
     </div>
-    <!-- Now showing movie -->
-    <h3>Entertainment news</h3>
-    <div class='row' >
+    <!-- Entertainment news -->
+    <h2 id='entertainment'>Entertainment</h2><br>
+    <div class='row'>
         {{ macro.displayArticleList(entertainment)}}
     </div>
-    <div class='row container'>
-        <h3>Top news sources</h3>
+    <div class='row container' id='sources'>
+        <h3 style ='text-align:center'>Top sources</h3>
         {{ macro.displaySourceList(sources)}}
     </div>
-</div>
+</div><br><br>
 <footer>Copyright 2020 | Demarillac Izere</footer>
 
 {% endblock%}

@@ -1,13 +1,13 @@
 {% macro displayArticleList(article_list) %}
 
     {% for article in article_list %}
-        <div class='col-lg-6'>
-            <h4>{{ article.title}}</h4>
+        <div>
             <div class='row'>
                 <div class='col-lg-5'>
                     <img src="{{article.urlToImage}}" width="100%">
                 </div>
                 <div class='col-lg-7'>
+                    <h3>{{ article.title}}</h3><br>
                     {{article.description}}<br>
                     <a href='{{article.url}}' target = "_blank">read more...</a><br><br>
                     posted {{article.publishedAt}}
@@ -23,9 +23,14 @@
 
     {% for source in source_list %}
         <div class='col-lg-3'>
-            <a href='{{source.url}}' target = "_blank"><h4>{{ source.name}}</h4></a><br>
-            <p>{{source.description}}</p>
-            <button><a href='/source/{{source.id}}' target = "_blank">Click to view articles</a><br></button>
+            <div class='card'>
+                <div class='card-body'>
+                    <a href='{{source.url}}' target = "_blank"><h4>{{ source.name}}</h4></a>
+                    <p>{{source.description}}</p>
+                    <button class='btn btn-outline-secondary'><a href='/source/{{source.id}}' target = "_blank">Click to view articles</a><br></button>
+                </div>
+            </div>
+            
         </div>
     {% endfor %}
 
@@ -34,13 +39,13 @@
 {% macro displayNews(news_list) %}
 
     {% for news in news_list %}
-        <div class='col-lg-6'>
-            <h4>{{ news.title}}</h4>
+        <div >
             <div class='row'>
                 <div class='col-lg-5'>
                     <img src="{{news.urlToImage}}" width="100%">
                 </div>
                 <div class='col-lg-7'>
+                    <h3>{{ news.title}}</h3><br>
                     {{news.description}}<br>
                     <a href='{{news.url}}' target = "_blank">read more...</a><br><br>
                     posted {{news.publishedAt}}

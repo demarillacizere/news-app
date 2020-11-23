@@ -90,7 +90,7 @@ def get_news(name):
 
         if news_response['articles']:
             news_result_list=news_response["articles"]
-            news_results=process_sources(news_result_list)
+            news_results=process_news(news_result_list)
     return news_results
 
 
@@ -99,11 +99,12 @@ def process_news(news_list):
     for news in news_list:
         title=news.get("title")
         description=news.get("description")
-        urlToImage=news.get("urlToImage")
         url=news.get("url")
+        urlToImage=news.get("urlToImage")
         publishedAt=news.get("publishedAt")
-
-        news_object=News(title,description,urlToImage,url,publishedAt)
-        news_results.append(news_object)
+        
+        if urlToImage and description:
+            news_object=News(title,description,url,urlToImage,publishedAt)
+            news_results.append(news_object)
 
     return news_results 
