@@ -20,9 +20,6 @@ def index():
 
 @app.route("/source/<name>")
 def body(name):
-    abc_news=get_news("abc-news")
-    abc_au=get_news("abc-news-au")
-    aljazeera=get_news("al-jazeera-english")
-    technica=get_news("ars-technica")
+    news=get_news(name)
 
-    return render_template("source.html",name=name,abc=abc_news,abc_au=abc_au,aljazeera=aljazeera,tech=technica)
+    return render_template("source.html",name=name, news=news)

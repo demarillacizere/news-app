@@ -76,7 +76,6 @@ def process_sources(source_list):
 
         source_object=Source(id,name,description,url)
         source_results.append(source_object)
-        source_results=source_results[:4]
 
     return source_results
 

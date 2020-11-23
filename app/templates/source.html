@@ -10,20 +10,7 @@
 <div class="container">
     <h3 style='text-align:center'> Top Headlines on {{name}}</h3><hr>
     <div class='row container'>
-      {%if name=="al-jazeera-english"%}
-        {{macro.displayNews(aljazeera)}}
-      {%endif%}
-      {%if name=="abc-news"%}
-        {{macro.displayNews(abc)}}
-      {%endif%}
-
-      {%if name=="abc-news-au"%}
-        {{macro.displayNews(abc_au)}}
-      {%endif%}
-
-      {%if name=="ars-technica"%}
-        {{macro.displayNews(tech)}}
-      {%endif%}
+        {{macro.displayNews(news)}}
 </div>
 
 {% endblock%}

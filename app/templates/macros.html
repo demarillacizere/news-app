@@ -23,14 +23,7 @@
 
     {% for source in source_list %}
         <div class='col-lg-3'>
-            <div class='card'>
-                <div class='card-body'>
-                    <a href='{{source.url}}' target = "_blank"><h4>{{ source.name}}</h4></a>
-                    <p>{{source.description}}</p>
-                    <button class='btn btn-outline-secondary'><a href='/source/{{source.id}}' target = "_blank">Click to view articles</a><br></button>
-                </div>
-            </div>
-            
+            <a href='/source/{{source.id}}'>{{source.name}}</a>
         </div>
     {% endfor %}
 
