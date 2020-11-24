@@ -8,17 +8,8 @@ h2{
     text-align: center;
 }
 footer{
-    background-color:black;
+    background-color:rgb(7, 17, 26);
     color:white;
     text-align: center;
-    padding:10px;
-}
-.nav li{
-    padding-right:20px;
-}
-.nav a{
-    color:black
-}
-.nav{
-    position:fixed;
+    padding:15px;
 }
